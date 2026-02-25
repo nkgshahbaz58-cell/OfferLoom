@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TurboRush — Multiplayer Car Racing Game</title>
+  <meta name="description" content="TurboRush is a thrilling browser-based car racing game. Choose your car, pick your track, beat the AI and climb the leaderboard!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏎️</text></svg>" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">🏎️ TurboRush</div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="game.html" class="btn-nav-play">Play Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="game.html" class="btn-nav-play">Play Now</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">🏆 Browser-Native Racing</div>
+      <h1 class="hero-title">Race. Dominate.<br><span class="gradient-text">Become Legend.</span></h1>
+      <p class="hero-sub">The ultimate high-speed racing experience — no download, no install. Pure adrenaline in your browser.</p>
+      <div class="hero-ctas">
+        <a href="game.html" class="btn-primary pulse">🚀 Play for Free</a>
+        <a href="#features" class="btn-secondary">See Features ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill">🚗 5 Cars</div>
+        <div class="stat-pill">🛣️ 3 Tracks</div>
+        <div class="stat-pill">🤖 AI Opponents</div>
+        <div class="stat-pill">🏅 Leaderboard</div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">↓ Scroll</div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="section-header">
+      <span class="section-label">WHAT YOU GET</span>
+      <h2>Built for <span class="gradient-text">Speed Freaks</span></h2>
+      <p>Every feature tuned to perfection for the ultimate racing experience</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎮</div>
+        <h3>Smooth Controls</h3>
+        <p>Keyboard, touch, and gamepad support. Race anywhere on any device.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>Smart AI Opponents</h3>
+        <p>Three AI racers with adaptive difficulty that scale as you improve.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Nitro Boost</h3>
+        <p>Build up and unleash a burst of nitro at exactly the right moment.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎵</div>
+        <h3>Procedural Audio</h3>
+        <p>Synthesized engine roar, collision crunch, and victory fanfare.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛣️</div>
+        <h3>3 Unique Tracks</h3>
+        <p>Neon City streets, Desert Dunes flats, and treacherous Mountain Pass.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>Global Leaderboard</h3>
+        <p>Save your best lap times and compete for the top spot per track.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARS SHOWCASE -->
+  <section class="cars-section">
+    <div class="section-header">
+      <span class="section-label">THE GARAGE</span>
+      <h2>Choose Your <span class="gradient-text">Machine</span></h2>
+    </div>
+    <div class="cars-showcase">
+      <div class="car-showcase-card" style="--car-color: #FF4655">
+        <div class="car-icon">🏎️</div>
+        <h4>Blaze X</h4>
+        <p>Balanced</p>
+      </div>
+      <div class="car-showcase-card" style="--car-color: #00D4FF">
+        <div class="car-icon">🚗</div>
+        <h4>Storm V12</h4>
+        <p>Top Speed</p>
+      </div>
+      <div class="car-showcase-card" style="--car-color: #A259FF">
+        <div class="car-icon">🏎️</div>
+        <h4>Phantom GT</h4>
+        <p>Handling</p>
+      </div>
+      <div class="car-showcase-card" style="--car-color: #00FF88">
+        <div class="car-icon">🚘</div>
+        <h4>Viper RS</h4>
+        <p>Acceleration</p>
+      </div>
+      <div class="car-showcase-card" style="--car-color: #FFD700">
+        <div class="car-icon">🏆</div>
+        <h4>Titan Ultra</h4>
+        <p>Supreme</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-header">
+      <span class="section-label">PRICING</span>
+      <h2>Start Free, <span class="gradient-text">Race Harder</span></h2>
+      <p>Upgrade anytime to unlock premium cars and exclusive tracks</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Free</div>
+        <div class="pricing-price">$0<span>/mo</span></div>
+        <ul class="pricing-features">
+          <li>✅ 2 Cars (Blaze X, Storm V12)</li>
+          <li>✅ 2 Tracks (City, Desert)</li>
+          <li>✅ 3 AI Opponents</li>
+          <li>✅ Leaderboard</li>
+          <li>❌ Premium Cars</li>
+          <li>❌ Mountain Track</li>
+        </ul>
+        <a href="game.html" class="btn-pricing-free">Play Free</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="popular-badge">MOST POPULAR</div>
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-price">$4.99<span>/mo</span></div>
+        <ul class="pricing-features">
+          <li>✅ All Free features</li>
+          <li>✅ Phantom GT & Viper RS</li>
+          <li>✅ Mountain Pass Track</li>
+          <li>✅ Custom car colors</li>
+          <li>✅ Replay system</li>
+          <li>❌ Titan Ultra</li>
+        </ul>
+        <a href="game.html" class="btn-pricing-pro">Get Pro</a>
+      </div>
+      <div class="pricing-card premium-card">
+        <div class="pricing-tier">Premium</div>
+        <div class="pricing-price">$9.99<span>/mo</span></div>
+        <ul class="pricing-features">
+          <li>✅ Everything in Pro</li>
+          <li>✅ Titan Ultra (exclusive)</li>
+          <li>✅ Night mode tracks</li>
+          <li>✅ Ghost racing</li>
+          <li>✅ Priority leaderboard</li>
+          <li>✅ Discord role</li>
+        </ul>
+        <a href="game.html" class="btn-pricing-premium">Go Premium</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2>Ready to Hit the Track?</h2>
+    <p>No account needed. Jump in and race in seconds.</p>
+    <a href="game.html" class="btn-primary pulse">🏁 Start Racing Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">🏎️ TurboRush</div>
+    <p class="footer-desc">A browser-based SaaS racing game. Deploy on GitHub Pages, host on your domain.</p>
+    <div class="footer-links">
+      <a href="game.html">Play</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="https://github.com" target="_blank">GitHub</a>
+    </div>
+    <p class="footer-copy">© 2026 TurboRush. Built with ❤️ and pure JavaScript.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
