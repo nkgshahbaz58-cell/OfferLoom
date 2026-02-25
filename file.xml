@@ -1,9 +1,0 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="256" cy="256" r="256" fill="#FFFFFF"/>
-  
-  <g transform="translate(106, 106) scale(2.5)">
-    <path d="M15 10C15 4.477 19.477 0 25 0V60C19.477 60 15 55.523 15 50V10Z" fill="#4F46E5"/>
-    <path d="M0 30C0 24.477 4.477 20 10 20H50C55.523 20 60 24.477 60 30V30C60 35.523 55.523 40 50 40H10C4.477 40 0 35.523 0 30V30Z" fill="#FF6B6B" style="mix-blend-mode: multiply;"/>
-    <circle cx="25" cy="30" r="6" fill="white"/>
-  </g>
-</svg>
