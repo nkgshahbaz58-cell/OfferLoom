@@ -84,7 +84,7 @@ export default function ConnectStripePage() {
           </h1>
 
           <p className="text-xl text-slate-300 mb-12 leading-relaxed">
-            We'll securely connect to your Stripe account to monitor your
+            We&apos;ll securely connect to your Stripe account to monitor your
             customer data and identify churn risks before they happen.
           </p>
 
