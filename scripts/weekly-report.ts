@@ -115,7 +115,7 @@ function formatCurrency(cents: number): string {
 }
 
 async function sendSlackReport(webhookUrl: string, report: WorkspaceReport) {
-  const blocks = [
+  const blocks: any[] = [
     {
       type: "header",
       text: {
