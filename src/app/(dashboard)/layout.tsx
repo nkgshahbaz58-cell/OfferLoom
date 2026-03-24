@@ -14,9 +14,16 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
       <DashboardNav user={session.user} />
-      <main className="container mx-auto px-4 py-8">{children}</main>
+      {/* Main content area */}
+      <main className="lg:pl-72">
+        {/* Mobile spacing */}
+        <div className="lg:hidden h-28" />
+        <div className="p-6 lg:p-10">
+          {children}
+        </div>
+      </main>
     </div>
   );
 }
