@@ -1,12 +1,26 @@
 import { redirect } from "next/navigation";
-import { getAuthSession } from "@/lib/auth";
 
 export default async function Home() {
-  const session = await getAuthSession();
+  // Check if required environment variables are set
+  const isDatabaseConfigured = !!process.env.DATABASE_URL;
+  const isAuthConfigured = !!process.env.NEXTAUTH_SECRET;
 
-  if (session) {
-    redirect("/dashboard");
-  } else {
-    redirect("/login");
+  if (!isDatabaseConfigured || !isAuthConfigured) {
+    redirect("/setup");
+  }
+
+  // Try to get session only if env vars are configured
+  try {
+    const { getAuthSession } = await import("@/lib/auth");
+    const session = await getAuthSession();
+
+    if (session) {
+      redirect("/dashboard");
+    } else {
+      redirect("/login");
+    }
+  } catch (error) {
+    console.error("Auth error:", error);
+    redirect("/setup");
   }
 }
