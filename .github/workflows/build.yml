@@ -1,0 +1,39 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run linting
+      run: npm run lint
+
+    - name: Build project
+      run: npm run build
+      env:
+        NEXT_PUBLIC_TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        TMDB_API_BASE: https://api.themoviedb.org/3
+        NEXT_PUBLIC_TMDB_IMAGE_BASE: https://image.tmdb.org/t/p
+        NEXT_PUBLIC_APP_NAME: Netflix Clone
+        NEXT_PUBLIC_APP_DESCRIPTION: Your source for movies and shows
