@@ -37,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       disabled={disabled || isLoading}
-      {...props}
+      {...(props as any)}
     >
       {isLoading ? 'Loading...' : children}
     </motion.button>

@@ -14,9 +14,13 @@ const config: Config = {
         accent: '#F59E0B',
         dark: '#1F2937',
         light: '#F3F4F6',
+        'netflix-black': '#141414',
+        'netflix-red': '#E50914',
+        'netflix-card-bg': '#2f2f2f',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        bebas: ['Bebas Neue', 'sans-serif'],
       },
     },
   },

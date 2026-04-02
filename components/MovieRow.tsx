@@ -1,13 +1,13 @@
 'use client';
 
+import React, { useRef, useState } from 'react';
 import { Movie } from '@/lib/types';
 import MovieCard from './MovieCard';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
 export default function MovieRow({ title, movies }: { title: string; movies: Movie[] }) {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const scrollRef = React.useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -24,15 +24,16 @@ export default function MovieRow({ title, movies }: { title: string; movies: Mov
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="relative"
+      className="relative px-4 md:px-8"
     >
-      <h2 className="text-2xl font-bebas font-bold mb-4">{title}</h2>
+      <h2 className="text-2xl font-bebas font-bold mb-4 text-white">{title}</h2>
 
       <div className="relative group">
         {/* Left Arrow */}
         <button
           onClick={() => scroll('left')}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 opacity-0 group-hover:opacity-100 transition bg-black/50 p-2"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 opacity-0 group-hover:opacity-100 transition bg-black/50 hover:bg-black/70 p-2 rounded"
+          aria-label="Scroll left"
         >
           ◀
         </button>
@@ -50,7 +51,8 @@ export default function MovieRow({ title, movies }: { title: string; movies: Mov
         {/* Right Arrow */}
         <button
           onClick={() => scroll('right')}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 opacity-0 group-hover:opacity-100 transition bg-black/50 p-2"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 opacity-0 group-hover:opacity-100 transition bg-black/50 hover:bg-black/70 p-2 rounded"
+          aria-label="Scroll right"
         >
           ▶
         </button>
@@ -58,5 +60,3 @@ export default function MovieRow({ title, movies }: { title: string; movies: Mov
     </motion.div>
   );
 }
-
-import React from 'react';

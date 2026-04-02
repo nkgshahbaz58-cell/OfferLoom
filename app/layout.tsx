@@ -1,30 +1,28 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import './layout.css'
-import './pages.css'
-import './components.css'
+import type { Metadata } from 'next';
+import { Suspense } from 'react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'OfferLoom',
-  description: 'Next-generation offer management platform',
-  viewport: 'width=device-width, initial-scale=1',
-}
+  title: 'Netflix Clone - OfferLoom',
+  description: 'A Netflix-inspired movie streaming platform',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-      </head>
-      <body>
-        <div className="layout">
-          {children}
-        </div>
+      <body className="bg-netflix-black text-white">
+        <Suspense fallback={<div>Loading navbar...</div>}>
+          <Navbar />
+        </Suspense>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
-  )
+  );
 }
