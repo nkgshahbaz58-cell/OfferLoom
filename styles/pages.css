@@ -1,0 +1,10 @@
+/* Page Specific Styles */
+.page-container {
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}

@@ -1,14 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
-  experimental: {
-    serverComponentsExternalPackages: ["@prisma/client"],
+  images: {
+    domains: ['image.tmdb.org'],
+    unoptimized: false,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
+  headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
+    ];
   },
 };
 
